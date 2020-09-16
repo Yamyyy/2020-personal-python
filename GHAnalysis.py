@@ -117,13 +117,7 @@ class Run:
     def analysis(self):
 
         if self.parser.parse_args().init:
-            pass;
-        else:
-            if self.parser.parse_args().event:
-                pass
-            return "Hello World!"
-
-        if self.parser.parse_args().init:
+            print("iiiiii")
             self.data = Data(self.parser.parse_args().init, 1)
             return 0
         else:
