@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 
 
 class Data:
@@ -99,6 +100,7 @@ class Data:
         else:
             return self.__4Events4PerPPerR[username][reponame].get(event,0)
 
+
 class Run:
     def __init__(self):
         self.parser = argparse.ArgumentParser()
@@ -113,6 +115,14 @@ class Run:
         self.parser.add_argument('-i','--init')
 
     def analysis(self):
+
+        if self.parser.parse_args().init:
+            pass;
+        else:
+            if self.parser.parse_args().event:
+                pass
+            return "Hello World!"
+
         if self.parser.parse_args().init:
             self.data = Data(self.parser.parse_args().init, 1)
             return 0
